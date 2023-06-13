@@ -1,3 +1,4 @@
+import os
 import re
 
 import streamlit as st
@@ -12,7 +13,8 @@ from streamlit_chat import message
 
 from utils import pdf_to_string
 
-load_dotenv()  # Loading the API keys safely
+os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
+openai_api_key=os.getenv('OPENAI_API_KEY')
 
 st.set_page_config(page_title="Конституция")
 st.markdown(
