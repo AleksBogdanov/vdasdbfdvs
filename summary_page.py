@@ -10,7 +10,6 @@ from utils import pdf_to_string
 # of the text in the form of numbers. There numbers can easily be grouped by similarity and in this way
 # one can understand which part of the text speak about the same thing.
 
-load_dotenv()  # Loading the API keys safely
 st.set_page_config(page_title="Резюме>")
 st.subheader("")
 st.markdown(
@@ -26,6 +25,7 @@ hide_button_style = """
 
 """
 st.markdown(hide_button_style, unsafe_allow_html=True)
+os.environ['COHERE_API_KEY'] = st.secrets['COHERE_API_KEY']
 
 def summarize(
         document: str,
