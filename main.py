@@ -1,5 +1,14 @@
 import streamlit as st
 from st_pages import Page, show_pages, add_page_title
+hide_button_style = """
+<style>
+  .css-14xtw13 {    
+    display: none;
+  }
+</style>
+
+"""
+st.markdown(hide_button_style, unsafe_allow_html=True)
 
 
 def main():
